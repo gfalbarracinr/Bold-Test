@@ -15,7 +15,7 @@
   margin-right: 5px;
 }
 
-.filter-date-button:hover, .filter-date-button:active  {
+.filter-date-button:hover, .filter-date-button:active, .filter-active  {
   background-color: var(--white);
   border-radius: 40px;
 }

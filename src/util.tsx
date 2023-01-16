@@ -8,6 +8,19 @@ import VisaLogo from './assets/icons/visa.png';
 const getMonth = (date: Date): string => {
   return new Intl.DateTimeFormat("es-CO", {month: 'long'}).format(date);
 }
+const getDate = (date: Date): string => {
+  return `${date.getDate()}, ${date.getMonth()}, ${date.getFullYear()}`;
+}
+const getMonthYear = (date: Date): string => {
+  return `${date.getMonth()}, ${date.getFullYear()}`;
+}
+const isInThisWeek = (date: Date): boolean => {
+  const today = new Date();
+  const lastweek = new Date()
+  lastweek.setTime(today.getTime() - (7 * 24 * 60 * 60 * 1000));
+  return date.valueOf() >= lastweek.valueOf() && date.valueOf() <= today.valueOf();
+
+}
 export const formatDateDay = (date: Date): string => {
   return new Intl.DateTimeFormat("es-CO", {day:'numeric', month:'numeric',year:'numeric'}).format(date);
 }
@@ -65,5 +78,17 @@ export const resolveCardTypeIcon = (card: CardType) => {
 export const createMockCardNumber = (cardNumber: number) => {
   if (cardNumber.toString().length === 4) {
     return `**** **** **** ${cardNumber}`;
+  }
+}
+
+export const dateIsInBoundary = (date: Date, filter: FilterType) => {
+  const currentDay = new Date();
+  switch(filter) {
+    case FilterType.DAY:
+      return getDate(date) === getDate(currentDay);
+    case FilterType.MONTH:
+      return getMonthYear(date) === getMonthYear(currentDay);
+    case FilterType.WEEK:
+      return isInThisWeek(date);
   }
 }

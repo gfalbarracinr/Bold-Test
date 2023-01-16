@@ -1,15 +1,22 @@
 import React, { useState } from 'react'
-import { FilterType } from '../../types'
+import { ActionTypes, FilterType } from '../../types'
 import { getFilterTitle, toCapitalize } from '../../util'
 import { GoSettings } from 'react-icons/go'
 import './filter.css'
 import FilterModal from './FilterModal'
+import useFilter from '../../context/useFilter'
 
 interface Props {
-  date: Date
+  date: Date,
+  activeFilter: FilterType
 }
-const Filter = ({date}: Props) => {
+const Filter = ({date, activeFilter}: Props) => {
+  console.log('active ', activeFilter)
   const [filterOptions, setFilterOptions] = useState(false);
+  const {dispatch} = useFilter();
+  const handleClick = (filter: FilterType) => {
+    dispatch({type: ActionTypes.CHANGE_TIME_FILTER, payload: filter})
+  }
   const toggleFilterOptions = () => {
     setFilterOptions((prevState) => !prevState);
   }
@@ -18,7 +25,14 @@ const Filter = ({date}: Props) => {
       <ul className='filter-container'>
         {
           Object.values(FilterType).map((filter) => (
-            <li key={filter} className='filter-date-item'><button className='filter-button filter-date-button'>{toCapitalize(getFilterTitle(filter, date))}</button></li>
+            <li key={filter} className='filter-date-item'>
+              <button 
+                className={`filter-button filter-date-button ${filter === activeFilter ? 'filter-active' : ''}`}
+                onClick={() => handleClick(filter)}
+              >
+                {toCapitalize(getFilterTitle(filter, date))}
+              </button>
+            </li>
           ))
         }
       </ul>

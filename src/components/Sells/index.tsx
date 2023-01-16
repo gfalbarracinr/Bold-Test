@@ -45,16 +45,20 @@ const Sells = ({filter}: Props) => {
       <table className='sells-table'>
         <thead>
           <tr className='table-header-container'>
-            <th className='table-header-title'><p>Transacción</p></th>
-            <th className='table-header-title'>Fecha y hora</th>
-            <th className='table-header-title'>Método de pago</th>
-            <th className='table-header-title'>ID transacción Bold</th>
-            <th className='table-header-title'>Monto</th>
+            <th className='table-header-title'><p className='table-header-transaction'>Transacción</p></th>
+            <th className='table-header-title'><p>Fecha y hora</p></th>
+            <th className='table-header-title'><p>Método de pago</p></th>
+            <th className='table-header-title'><p>ID transacción Bold</p></th>
+            <th className='table-header-title'><p>Monto</p></th>
+          </tr>
+          <tr>
+            <th className='line-separator'/>
           </tr>
         </thead>
         <tbody>
           {
             transactions.map((transaction) => <TransactionElement key={transaction.id} transaction={transaction}/>)
+            
           }
         </tbody>
       </table>

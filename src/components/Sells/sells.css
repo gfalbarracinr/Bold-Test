@@ -1,5 +1,6 @@
 .container{
   padding: 0 var(--side-padding);
+  margin-bottom: 50px;
 }
 
 .sells-title-container{
@@ -12,8 +13,7 @@
   font-weight: 300;
   margin: 0;
   margin-top: 10px;
-  margin-left: 20px;
-  
+  margin-left: 20px;  
 }
 
 .table-header-container{
@@ -31,13 +31,42 @@
 .sells-table{
   width: 100%;
   border-spacing: 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .table-header-title{
   vertical-align: middle;
   font-weight: 300;
 }
 .transaction-container {
-  margin: 0 10px;
   height: 30px;
   background-color: white;
+}
+.transaction-type,.table-header-transaction {
+  margin-left: 30px;
+}
+.transaction-type-cell-dark{
+  border-left: 3px solid var(--blue);
+}
+
+.transaction-type-cell-light{
+  border-left: 3px solid var(--light-gray);
+}
+td {
+  vertical-align: top;
+}
+.amount-cell {
+  margin-bottom: 5px;
+}
+.extra-info-text, .extra-info-amount{
+  margin: 0;
+  margin-bottom: 5px;
+  padding: 0;
+  font-size: 12px
+}
+.extra-info-amount {
+  color: var(--red);
+}
+.extra-info{
+  margin-bottom: 10px;
 }

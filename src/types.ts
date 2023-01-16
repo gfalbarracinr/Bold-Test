@@ -6,7 +6,7 @@ export enum FilterType {
 
 export enum TransactionType {
   TERMINAL='TERMINAL',
-  LINK='LINk',
+  LINK='LINK',
 }
 
 export enum CardType {

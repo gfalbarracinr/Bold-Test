@@ -43,7 +43,7 @@ const Sells = ({filter}: Props) => {
         <h1 className='sells-title'>Tus ventas de {getFilterTitle(filter, new Date())}</h1>
       </section>
       <table className='sells-table'>
-        <thead>
+        <thead className='table-header'>
           <tr className='table-header-container'>
             <th className='table-header-title'><p className='table-header-transaction'>Transacción</p></th>
             <th className='table-header-title'><p>Fecha y hora</p></th>

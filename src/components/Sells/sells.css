@@ -70,3 +70,57 @@ td {
 .extra-info{
   margin-bottom: 10px;
 }
+.transaction-title{
+  display: none;
+}
+.line-separator {
+  display: none;
+}
+
+@media only screen and (max-width: 900px) {
+  .transaction-title {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0;
+    margin-right: 30px;
+
+  }
+  .table-header{
+    display: none;
+  }
+  .transaction-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+  }
+  .transaction-container {
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+  }
+  .transaction-type {
+    margin: 0;
+  }
+  .line-separator{
+    display: block;
+    margin: 0;
+  }
+  .line-light {
+    border: 2px solid var(--white);
+    color: var(--white);
+  }
+  .line-dark {
+    border: 2px solid var(--blue);
+    color: var(--blue);
+  }
+  .amount-cell, .extra-info-text, .extra-info-amount{
+    margin:0;
+    margin-right: 10px;
+  }
+  .extra-info{
+    display: flex;
+    margin: 0;
+  }
+}

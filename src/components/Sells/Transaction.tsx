@@ -13,11 +13,24 @@ const TransactionElement = ({transaction}: Props) => {
   return (
     <Fragment>
     <tr className='transaction-container'>
-      <td className={`transaction-type-cell-${style}`}><p className='transaction-type' title={transaction.type}>{TransactionTypeIcon} {resultText}</p></td>
-      <td><p>{`${formatDateDay(transaction.date)} - ${formatDateHour(transaction.date)}`}</p></td>
-      <td><p title={transaction.cardType}>{CardTypeIcon} {cardNumber}</p></td>
-      <td><p>{transaction.id}</p></td>
-      <td>
+      <td className={`transaction-cell transaction-type-cell-${style}`}>
+        <h2 className='transaction-title'>Transacción: </h2>
+        <p className='transaction-type' title={transaction.type}>{TransactionTypeIcon} {resultText}</p>
+      </td>
+      <td className='transaction-cell'>
+        <h2 className='transaction-title'>Fecha y Hora: </h2>
+        <p>{`${formatDateDay(transaction.date)} - ${formatDateHour(transaction.date)}`}</p>
+      </td>
+      <td className='transaction-cell'>
+        <h2 className='transaction-title'>Método de pago: </h2>
+        <p title={transaction.cardType}>{CardTypeIcon} {cardNumber}</p>
+      </td>
+      <td className='transaction-cell'>
+        <h2 className='transaction-title'>ID transacción Bold: </h2>
+        <p>{transaction.id}</p>
+      </td>
+      <td className='transaction-cell'>
+        <h2 className='transaction-title'>Monto: </h2>
         <p className='amount-cell'>{formatNumberToCurrency(transaction.amount)}</p>
         { transaction.isSuccess && (
           <section className='extra-info'>
@@ -28,8 +41,9 @@ const TransactionElement = ({transaction}: Props) => {
       </td>
     </tr>
     <tr>
-      <td colSpan={5} className='line-separator'/>
+      <td colSpan={5}/>
     </tr>
+    <hr className={`line-separator line-${style}`}></hr>
     </Fragment>
   )
 }

@@ -1,0 +1,40 @@
+.summary-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 var(--side-padding);
+  margin-top: 30px;
+}
+
+.expenses-container {
+  width: 25%;
+  background-color: white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  max-height: 160px;
+}
+
+.title-container {
+  background: var(--light-black);
+  background: linear-gradient(90deg, var(--purple) 15%, var(--red) 100%);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  height: 60px;
+  color: white;
+}
+
+.expenses-title {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  padding-top: 25px;
+  display: flex;
+  justify-content: space-around;
+}
+.total-expenses {
+  text-align: center;
+  color: var(--purple);
+}
+
+.expenses-description-contianer {
+  text-align: center;
+}

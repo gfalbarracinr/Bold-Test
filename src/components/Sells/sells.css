@@ -1,0 +1,43 @@
+.container{
+  padding: 0 var(--side-padding);
+}
+
+.sells-title-container{
+  background: linear-gradient(90deg, var(--black) 0%, var(--blue) 50%, var(--purple) 100%);;
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.sells-title {
+  font-weight: 300;
+  margin: 0;
+  margin-top: 10px;
+  margin-left: 20px;
+  
+}
+
+.table-header-container{
+  text-align: left;
+  font-size: 14px;
+  padding: 0 var(--side-padding);
+  border: none;
+  border-bottom: 1px solid var(--white);
+  height: 45px;
+  background-color: white;
+}
+.table-header-title{
+  margin-left: 30px;
+}
+.sells-table{
+  width: 100%;
+  border-spacing: 0;
+}
+.table-header-title{
+  vertical-align: middle;
+  font-weight: 300;
+}
+.transaction-container {
+  margin: 0 10px;
+  height: 30px;
+  background-color: white;
+}
